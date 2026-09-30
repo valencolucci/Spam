@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SPAM | Mirar, parar y entender</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111111;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            border-bottom: 3px solid #111111;
+            padding: 20px 5%;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: -4px;
+        }
+
+        .logo span {
+            color: #ffd400;
+        }
+
+        .frase {
+            font-size: 14px;
+            font-weight: bold;
+            max-width: 250px;
+            text-align: right;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #111111;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d6ae00;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            background: #ffd400;
+            padding: 7px 12px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .principal {
+            border-bottom: 3px solid #111111;
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+        .imagen-principal {
+            width: 100%;
+            height: 420px;
+            background: #eeeeee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .principal h1 {
+            font-size: clamp(36px, 6vw, 72px);
+            line-height: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .bajada {
+            font-size: 20px;
+            line-height: 1.4;
+            max-width: 800px;
+        }
+
+        /* NOTAS SECUNDARIAS */
+
+        .titulo-seccion {
+            font-size: 30px;
+            margin-bottom: 25px;
+            border-left: 10px solid #ffd400;
+            padding-left: 12px;
+        }
+
+        .noticias {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .noticia {
+            border-top: 3px solid #111111;
+            padding-top: 15px;
+        }
+
+        .imagen-noticia {
+            width: 100%;
+            height: 230px;
+            background: #eeeeee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .noticia h3 {
+            font-size: 27px;
+            line-height: 1.05;
+            margin-bottom: 10px;
+        }
+
+        .noticia p {
+            line-height: 1.4;
+        }
+
+        /* ÚLTIMAS PUBLICACIONES */
+
+        .ultimas {
+            border-top: 3px solid #111111;
+            padding-top: 30px;
+            margin-bottom: 60px;
+        }
+
+        .publicacion {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .publicacion .info {
+            max-width: 800px;
+        }
+
+        .publicacion h3 {
+            font-size: 24px;
+            margin-top: 5px;
+        }
+
+        .fecha {
+            font-size: 13px;
+            font-weight: bold;
+            color: #555555;
+        }
+
+        /* AUDIOVISUAL */
+
+        .audiovisual {
+            background: #111111;
+            color: white;
+            padding: 35px;
+            margin-bottom: 60px;
+        }
+
+        .audiovisual .titulo-seccion {
+            color: white;
+        }
+
+        .video {
+            height: 300px;
+            background: #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111111;
+            color: white;
+            padding: 40px 5%;
+        }
+
+        footer h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .redes {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            .header-top {
+                display: block;
+            }
+
+            .logo {
+                font-size: 45px;
+                margin-bottom: 10px;
+            }
+
+            .frase {
+                text-align: left;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .imagen-principal {
+                height: 250px;
+            }
+
+            .principal h1 {
+                font-size: 42px;
+            }
+
+            .bajada {
+                font-size: 17px;
+            }
+
+            .noticias {
+                grid-template-columns: 1fr;
+            }
+
+            .publicacion {
+                display: block;
+            }
+
+            .video {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="header-top">
+
+            <div class="logo">
+                SP<span>A</span>M
+            </div>
+
+            <div class="frase">
+                Parar. Mirar. Entender qué hay detrás.
+            </div>
+
+        </div>
+
+        <nav>
+            <a href="#">INICIO</a>
+            <a href="#">DETRÁS DE LO VIRAL</a>
+            <a href="#">LORE SEMANAL</a>
+            <a href="#">SPAM UPDATE</a>
+            <a href="#">SPAM FUERA DE JUEGO</a>
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO -->
+
+    <main>
+
+        <!-- NOTA PRINCIPAL -->
+
+        <section class="principal">
+
+            <span class="etiqueta">DESTACADO</span>
+
+            <div class="imagen-principal">
+                [IMAGEN PRINCIPAL]
+            </div>
+
+            <h1>[TÍTULO DE LA NOTA PRINCIPAL]</h1>
+
+            <p class="bajada">
+                [BAJADA DE LA NOTA PRINCIPAL]
+            </p>
+
+        </section>
+
+
+        <!-- NOTAS SECUNDARIAS -->
+
+        <h2 class="titulo-seccion">LO ÚLTIMO</h2>
+
+        <section class="noticias">
+
+            <article class="noticia">
+
+                <div class="imagen-noticia">
+                    [IMAGEN]
+                </div>
+
+                <span class="etiqueta">DETRÁS DE LO VIRAL</span>
+
+                <h3>[TÍTULO DE NOTA]</h3>
+
+                <p>[BAJADA DE LA NOTA]</p>
+
+            </article>
+
+
+            <article class="noticia">
+
+                <div class="imagen-noticia">
+                    [IMAGEN]
+                </div>
+
+                <span class="etiqueta">SPAM UPDATE</span>
+
+                <h3>[TÍTULO DE NOTA]</h3>
+
+                <p>[BAJADA DE LA NOTA]</p>
+
+            </article>
+
+        </section>
+
+
+        <!-- ÚLTIMAS PUBLICACIONES -->
+
+        <section class="ultimas">
+
+            <h2 class="titulo-seccion">ÚLTIMAS PUBLICACIONES</h2>
+
+            <article class="publicacion">
+
+                <div class="info">
+
+                    <span class="fecha">[FECHA] · [SECCIÓN]</span>
+
+                    <h3>[TÍTULO DE NOTA]</h3>
+
+                </div>
+
+                <span>[AUTOR]</span>
+
+            </article>
+
+
+            <article class="publicacion">
+
+                <div class="info">
+
+                    <span class="fecha">[FECHA] · [SECCIÓN]</span>
+
+                    <h3>[TÍTULO DE NOTA]</h3>
+
+                </div>
+
+                <span>[AUTOR]</span>
+
+            </article>
+
+
+            <article class="publicacion">
+
+                <div class="info">
+
+                    <span class="fecha">[FECHA] · [SECCIÓN]</span>
+
+                    <h3>[TÍTULO DE NOTA]</h3>
+
+                </div>
+
+                <span>[AUTOR]</span>
+
+            </article>
+
+        </section>
+
+
+        <!-- PODCAST / VIDEO -->
+
+        <section class="audiovisual">
+
+            <h2 class="titulo-seccion">MIRÁ / ESCUCHÁ SPAM</h2>
+
+            <div class="video">
+                [VIDEO / PODCAST]
+            </div>
+
+            <h3>[TÍTULO DEL CONTENIDO AUDIOVISUAL]</h3>
+
+            <p>[DESCRIPCIÓN]</p>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <h2>SPAM</h2>
+
+        <p>Nosotros vamos a parar, mirar y entender qué hay detrás.</p>
+
+        <div class="redes">
+            Instagram · YouTube
+        </div>
+
+    </footer>
+
+</body>
+</html>
